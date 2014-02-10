@@ -1,0 +1,69 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#define IS_PAD (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone)
+#define IS_PHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+
+    #import "NSArray+ContainsNumber.h"
+    #import "NSDate+HumanDate.h"
+    #import "NSDictionary+SimpleGetters.h"
+    #import "NSString+ApplicationFonts.h"
+    #import "NSString+TextSize.h"
+    #import "UIDevice+Idiom.h"
+    #import "UIImage+ImageEffects.h"
+    #import "UIScreen+Retina.h"
+    #import "UIView+SimpleFrame.h"
+
+    #import "ALHUDManager.h"
+    #import "AFNetworking.h"
+    #import "StandardPaths.h"
+    #import "DMImageManager.h"
+    #import "DMArrayDifference.h"
+
+    #import "ReachabilityManager.h"
+    #import "ServerParams.h"
+    #import "ServerManager.h"
+    #import "CoreDataManager.h"
+    #import "DownloadManager.h"
+    #import "SettingsManager.h"
+    #import "WebManager.h"
+    #import "FeedManager.h"
+
+#endif
+
+#define NSUserDefaults_KeyToken @"NSUserDefaults_KeyToken"
+
+#define IS_IOS7AndMore ([[UIDevice currentDevice] primarySystemVersion] > 6)
+#define IS_IOS6AndLess ([[UIDevice currentDevice] primarySystemVersion] < 7)
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+
+#define PhotoGallery_OpenNotification @"PhotoGallery_OpenNotification"
+#define PhotoGallery_UserInfoKey_GalleryID @"GalleryID"
+#define PhotoGallery_UserInfoKey_GalleryStartIndex @"GalleryStartIndex"
+#define PhotoGallery_UserInfoKey_GalleryStartImagePath @"GalleryStartImagePath"
+
+#define NODE_ITEMS_PERPAGE 12
+
+typedef enum {
+    TableViewCell_TextStyleTitle,
+    TableViewCell_TextStyleTitleSub,
+    TableViewCell_TextStyleDesc,
+    TableViewCell_TextStyleText
+} TableViewCell_TextStyle;
+

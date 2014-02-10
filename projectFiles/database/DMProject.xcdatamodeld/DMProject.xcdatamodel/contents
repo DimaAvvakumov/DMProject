@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Banners" representedClassName="Banners" syncable="YES">
+        <attribute name="bannerEnabled" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="bannerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="bannerType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fileSizeLandscape" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fileSizePortrait" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pathLandscape" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pathPortrait" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showAction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showTime" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="waitTime" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="linkItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BannersLinks" inverseName="banner" inverseEntity="BannersLinks" syncable="YES"/>
+    </entity>
+    <entity name="BannersLinks" representedClassName="BannersLinks" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="frameLandscape" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="framePortrait" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="banner" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Banners" inverseName="linkItems" inverseEntity="Banners" syncable="YES"/>
+    </entity>
+    <entity name="FileItem" representedClassName="FileItem" syncable="YES">
+        <attribute name="fileHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileHeight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fileMime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileSize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fileWidth" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="galleryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GalleryItem" inverseName="image" inverseEntity="GalleryItem" syncable="YES"/>
+        <relationship name="nodeFiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NodeFiles" inverseName="image" inverseEntity="NodeFiles" syncable="YES"/>
+        <relationship name="nodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NodeItem" inverseName="image" inverseEntity="NodeItem" syncable="YES"/>
+    </entity>
+    <entity name="GalleryItem" representedClassName="GalleryItem" syncable="YES">
+        <attribute name="galleryItemID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GalleryName" inverseName="items" inverseEntity="GalleryName" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileItem" inverseName="galleryItems" inverseEntity="FileItem" syncable="YES"/>
+    </entity>
+    <entity name="GalleryName" representedClassName="GalleryName" syncable="YES">
+        <attribute name="galleryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GalleryItem" inverseName="gallery" inverseEntity="GalleryItem" syncable="YES"/>
+        <relationship name="nodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NodeItem" inverseName="gallery" inverseEntity="NodeItem" syncable="YES"/>
+    </entity>
+    <entity name="NodeCategory" representedClassName="NodeCategory" syncable="YES">
+        <attribute name="categoryID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NodeItem" inverseName="category" inverseEntity="NodeItem" syncable="YES"/>
+    </entity>
+    <entity name="NodeFiles" representedClassName="NodeFiles" syncable="YES">
+        <attribute name="fileTag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileItem" inverseName="nodeFiles" inverseEntity="FileItem" syncable="YES"/>
+    </entity>
+    <entity name="NodeItem" representedClassName="NodeItem" syncable="YES">
+        <attribute name="authorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateTag" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="geoLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="geoLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="imageAuthor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageSmallPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isMedia" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleSub" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="videoExist" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NodeCategory" inverseName="items" inverseEntity="NodeCategory" syncable="YES"/>
+        <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GalleryName" inverseName="nodes" inverseEntity="GalleryName" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileItem" inverseName="nodes" inverseEntity="FileItem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Banners" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="BannersLinks" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FileItem" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GalleryItem" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GalleryName" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="NodeCategory" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="NodeFiles" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="NodeItem" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
