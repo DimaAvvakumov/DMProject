@@ -18,7 +18,7 @@
 @property (atomic, assign) BOOL whileDownloading;
 @property (atomic, assign) BOOL successDownload;
 @property (strong, nonatomic) id JSON;
-@property (assign, nonatomic) NSInteger error;
+@property (strong, nonatomic) EMError *emError;
 
 - (void) beforeStart;
 - (void) finish;

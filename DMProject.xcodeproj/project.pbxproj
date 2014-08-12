@@ -47,16 +47,8 @@
 		1812C8E518A7FD4E00B3D6CD /* DownloadCheckOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87418A7FD4E00B3D6CD /* DownloadCheckOperation.m */; };
 		1812C8E818A7FD4E00B3D6CD /* DownloadManagerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87818A7FD4E00B3D6CD /* DownloadManagerOperation.m */; };
 		1812C8E918A7FD4E00B3D6CD /* DownloadManagerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87818A7FD4E00B3D6CD /* DownloadManagerOperation.m */; };
-		1812C8EA18A7FD4E00B3D6CD /* DownloadNodesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87A18A7FD4E00B3D6CD /* DownloadNodesOperation.m */; };
-		1812C8EB18A7FD4E00B3D6CD /* DownloadNodesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87A18A7FD4E00B3D6CD /* DownloadNodesOperation.m */; };
-		1812C8EC18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87C18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m */; };
-		1812C8ED18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87C18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m */; };
-		1812C8EE18A7FD4E00B3D6CD /* DownloadUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87E18A7FD4E00B3D6CD /* DownloadUpdateOperation.m */; };
-		1812C8EF18A7FD4E00B3D6CD /* DownloadUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C87E18A7FD4E00B3D6CD /* DownloadUpdateOperation.m */; };
 		1812C8F018A7FD4E00B3D6CD /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88118A7FD4E00B3D6CD /* FeedManager.m */; };
 		1812C8F118A7FD4E00B3D6CD /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88118A7FD4E00B3D6CD /* FeedManager.m */; };
-		1812C8F218A7FD4E00B3D6CD /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88418A7FD4E00B3D6CD /* ReachabilityManager.m */; };
-		1812C8F318A7FD4E00B3D6CD /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88418A7FD4E00B3D6CD /* ReachabilityManager.m */; };
 		1812C8F418A7FD4E00B3D6CD /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88718A7FD4E00B3D6CD /* ServerManager.m */; };
 		1812C8F518A7FD4E00B3D6CD /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88718A7FD4E00B3D6CD /* ServerManager.m */; };
 		1812C8F618A7FD4E00B3D6CD /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812C88B18A7FD4E00B3D6CD /* SettingsManager.m */; };
@@ -98,6 +90,9 @@
 		1812C92E18A7FD7E00B3D6CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1812C92718A7FD7E00B3D6CD /* InfoPlist.strings */; };
 		1812C93118A7FF2A00B3D6CD /* DMProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1812C92F18A7FF2A00B3D6CD /* DMProject.xcdatamodeld */; };
 		1812C93218A7FF2A00B3D6CD /* DMProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1812C92F18A7FF2A00B3D6CD /* DMProject.xcdatamodeld */; };
+		185130E81999DAC20065993A /* EMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 185130E71999DAC20065993A /* EMError.m */; };
+		185130EB1999DC030065993A /* ObserverWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 185130EA1999DC030065993A /* ObserverWrapper.m */; };
+		185130EF1999DD0A0065993A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 185130EE1999DD0A0065993A /* ConfigManager.m */; };
 		18C8B3AB18A8001D00ECDD9C /* NodeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8B3AA18A8001D00ECDD9C /* NodeCategory.m */; };
 		18C8B3AC18A8001D00ECDD9C /* NodeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8B3AA18A8001D00ECDD9C /* NodeCategory.m */; };
 		18C8B3AF18A8001E00ECDD9C /* NodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8B3AE18A8001E00ECDD9C /* NodeItem.m */; };
@@ -173,16 +168,8 @@
 		1812C87418A7FD4E00B3D6CD /* DownloadCheckOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadCheckOperation.m; sourceTree = "<group>"; };
 		1812C87718A7FD4E00B3D6CD /* DownloadManagerOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManagerOperation.h; sourceTree = "<group>"; };
 		1812C87818A7FD4E00B3D6CD /* DownloadManagerOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManagerOperation.m; sourceTree = "<group>"; };
-		1812C87918A7FD4E00B3D6CD /* DownloadNodesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadNodesOperation.h; sourceTree = "<group>"; };
-		1812C87A18A7FD4E00B3D6CD /* DownloadNodesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadNodesOperation.m; sourceTree = "<group>"; };
-		1812C87B18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadNodesUpdateOperation.h; sourceTree = "<group>"; };
-		1812C87C18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadNodesUpdateOperation.m; sourceTree = "<group>"; };
-		1812C87D18A7FD4E00B3D6CD /* DownloadUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadUpdateOperation.h; sourceTree = "<group>"; };
-		1812C87E18A7FD4E00B3D6CD /* DownloadUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadUpdateOperation.m; sourceTree = "<group>"; };
 		1812C88018A7FD4E00B3D6CD /* FeedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManager.h; sourceTree = "<group>"; };
 		1812C88118A7FD4E00B3D6CD /* FeedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedManager.m; sourceTree = "<group>"; };
-		1812C88318A7FD4E00B3D6CD /* ReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityManager.h; sourceTree = "<group>"; };
-		1812C88418A7FD4E00B3D6CD /* ReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityManager.m; sourceTree = "<group>"; };
 		1812C88618A7FD4E00B3D6CD /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		1812C88718A7FD4E00B3D6CD /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
 		1812C88818A7FD4E00B3D6CD /* ServerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerParams.h; sourceTree = "<group>"; };
@@ -227,6 +214,12 @@
 		1812C92618A7FD7E00B3D6CD /* DMProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMProjectTests.m; sourceTree = "<group>"; };
 		1812C92818A7FD7E00B3D6CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1812C93018A7FF2A00B3D6CD /* DMProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DMProject.xcdatamodel; sourceTree = "<group>"; };
+		185130E61999DAC20065993A /* EMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMError.h; sourceTree = "<group>"; };
+		185130E71999DAC20065993A /* EMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMError.m; sourceTree = "<group>"; };
+		185130E91999DC030065993A /* ObserverWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverWrapper.h; sourceTree = "<group>"; };
+		185130EA1999DC030065993A /* ObserverWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverWrapper.m; sourceTree = "<group>"; };
+		185130ED1999DD0A0065993A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigManager.h; sourceTree = "<group>"; };
+		185130EE1999DD0A0065993A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigManager.m; sourceTree = "<group>"; };
 		18C8B3A918A8001D00ECDD9C /* NodeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeCategory.h; sourceTree = "<group>"; };
 		18C8B3AA18A8001D00ECDD9C /* NodeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeCategory.m; sourceTree = "<group>"; };
 		18C8B3AD18A8001E00ECDD9C /* NodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeItem.h; sourceTree = "<group>"; };
@@ -423,12 +416,15 @@
 		1812C86E18A7FD4E00B3D6CD /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				185130EC1999DD0A0065993A /* ConfigManager */,
 				1812C86F18A7FD4E00B3D6CD /* DownloadManager */,
+				185130E51999DAC20065993A /* ErrorHandler */,
 				1812C87F18A7FD4E00B3D6CD /* FeedManager */,
-				1812C88218A7FD4E00B3D6CD /* ReachabilityManager */,
 				1812C88518A7FD4E00B3D6CD /* ServerManager */,
 				1812C88918A7FD4E00B3D6CD /* SettingsManager */,
 				1812C88C18A7FD4E00B3D6CD /* WebManager */,
+				185130E91999DC030065993A /* ObserverWrapper.h */,
+				185130EA1999DC030065993A /* ObserverWrapper.m */,
 			);
 			path = etc;
 			sourceTree = "<group>";
@@ -450,12 +446,6 @@
 				1812C87418A7FD4E00B3D6CD /* DownloadCheckOperation.m */,
 				1812C87718A7FD4E00B3D6CD /* DownloadManagerOperation.h */,
 				1812C87818A7FD4E00B3D6CD /* DownloadManagerOperation.m */,
-				1812C87918A7FD4E00B3D6CD /* DownloadNodesOperation.h */,
-				1812C87A18A7FD4E00B3D6CD /* DownloadNodesOperation.m */,
-				1812C87B18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.h */,
-				1812C87C18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m */,
-				1812C87D18A7FD4E00B3D6CD /* DownloadUpdateOperation.h */,
-				1812C87E18A7FD4E00B3D6CD /* DownloadUpdateOperation.m */,
 			);
 			path = operations;
 			sourceTree = "<group>";
@@ -467,15 +457,6 @@
 				1812C88118A7FD4E00B3D6CD /* FeedManager.m */,
 			);
 			path = FeedManager;
-			sourceTree = "<group>";
-		};
-		1812C88218A7FD4E00B3D6CD /* ReachabilityManager */ = {
-			isa = PBXGroup;
-			children = (
-				1812C88318A7FD4E00B3D6CD /* ReachabilityManager.h */,
-				1812C88418A7FD4E00B3D6CD /* ReachabilityManager.m */,
-			);
-			path = ReachabilityManager;
 			sourceTree = "<group>";
 		};
 		1812C88518A7FD4E00B3D6CD /* ServerManager */ = {
@@ -594,6 +575,24 @@
 				1812C92718A7FD7E00B3D6CD /* InfoPlist.strings */,
 			);
 			path = projectTests;
+			sourceTree = "<group>";
+		};
+		185130E51999DAC20065993A /* ErrorHandler */ = {
+			isa = PBXGroup;
+			children = (
+				185130E61999DAC20065993A /* EMError.h */,
+				185130E71999DAC20065993A /* EMError.m */,
+			);
+			path = ErrorHandler;
+			sourceTree = "<group>";
+		};
+		185130EC1999DD0A0065993A /* ConfigManager */ = {
+			isa = PBXGroup;
+			children = (
+				185130ED1999DD0A0065993A /* ConfigManager.h */,
+				185130EE1999DD0A0065993A /* ConfigManager.m */,
+			);
+			path = ConfigManager;
 			sourceTree = "<group>";
 		};
 		18C8B3A818A7FFEB00ECDD9C /* models */ = {
@@ -772,7 +771,6 @@
 				1812C93118A7FF2A00B3D6CD /* DMProject.xcdatamodeld in Sources */,
 				1812C92018A7FD4E00B3D6CD /* SVWebViewController.m in Sources */,
 				1812C8D418A7FD4E00B3D6CD /* UIScreen+Retina.m in Sources */,
-				1812C8EA18A7FD4E00B3D6CD /* DownloadNodesOperation.m in Sources */,
 				18C8B3AF18A8001E00ECDD9C /* NodeItem.m in Sources */,
 				1812C8E418A7FD4E00B3D6CD /* DownloadCheckOperation.m in Sources */,
 				18C8B3BF18A8001E00ECDD9C /* Banners.m in Sources */,
@@ -781,17 +779,16 @@
 				18C8B3D618A8ADE200ECDD9C /* PhoneViewController.m in Sources */,
 				1812C8CA18A7FD4E00B3D6CD /* NSDictionary+SimpleGetters.m in Sources */,
 				1812C8C618A7FD4E00B3D6CD /* NSArray+ContainsNumber.m in Sources */,
-				1812C8F218A7FD4E00B3D6CD /* ReachabilityManager.m in Sources */,
 				1812C92218A7FD4E00B3D6CD /* TFTipView.m in Sources */,
-				1812C8EC18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m in Sources */,
 				1812C8DA18A7FD4E00B3D6CD /* CoreDataManager.m in Sources */,
 				1812C90E18A7FD4E00B3D6CD /* DMImageOperation.m in Sources */,
 				1812C8F418A7FD4E00B3D6CD /* ServerManager.m in Sources */,
 				1812C8E018A7FD4E00B3D6CD /* ColorToDataTransformer.m in Sources */,
 				1812C90A18A7FD4E00B3D6CD /* DMImageDownloadOperation.m in Sources */,
 				1812C90618A7FD4E00B3D6CD /* HUDItem.m in Sources */,
-				1812C8EE18A7FD4E00B3D6CD /* DownloadUpdateOperation.m in Sources */,
+				185130E81999DAC20065993A /* EMError.m in Sources */,
 				1812C8D618A7FD4E00B3D6CD /* UIView+SimpleFrame.m in Sources */,
+				185130EB1999DC030065993A /* ObserverWrapper.m in Sources */,
 				18C8B3B318A8001E00ECDD9C /* GalleryItem.m in Sources */,
 				1812C90418A7FD4E00B3D6CD /* ALHUDManager.m in Sources */,
 				18C8B3BB18A8001E00ECDD9C /* BannersLinks.m in Sources */,
@@ -801,6 +798,7 @@
 				1812C8E818A7FD4E00B3D6CD /* DownloadManagerOperation.m in Sources */,
 				1812C8C418A7FD4E00B3D6CD /* AppDelegate.m in Sources */,
 				18C8B3D218A8AD9900ECDD9C /* PadViewController.m in Sources */,
+				185130EF1999DD0A0065993A /* ConfigManager.m in Sources */,
 				1812C8F618A7FD4E00B3D6CD /* SettingsManager.m in Sources */,
 				18C8B3C318A8001E00ECDD9C /* NodeFiles.m in Sources */,
 				1812C91C18A7FD4E00B3D6CD /* SVModalWebViewController.m in Sources */,
@@ -818,7 +816,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C8B3C818A8001E00ECDD9C /* FileItem.m in Sources */,
-				1812C8ED18A7FD4E00B3D6CD /* DownloadNodesUpdateOperation.m in Sources */,
 				1812C8F718A7FD4E00B3D6CD /* SettingsManager.m in Sources */,
 				1812C8C518A7FD4E00B3D6CD /* AppDelegate.m in Sources */,
 				1812C8E918A7FD4E00B3D6CD /* DownloadManagerOperation.m in Sources */,
@@ -837,13 +834,10 @@
 				18C8B3D718A8ADE200ECDD9C /* PhoneViewController.m in Sources */,
 				1812C92118A7FD4E00B3D6CD /* SVWebViewController.m in Sources */,
 				1812C90918A7FD4E00B3D6CD /* DMArrayDifference.m in Sources */,
-				1812C8F318A7FD4E00B3D6CD /* ReachabilityManager.m in Sources */,
 				1812C90518A7FD4E00B3D6CD /* ALHUDManager.m in Sources */,
-				1812C8EB18A7FD4E00B3D6CD /* DownloadNodesOperation.m in Sources */,
 				1812C8D518A7FD4E00B3D6CD /* UIScreen+Retina.m in Sources */,
 				1812C8CF18A7FD4E00B3D6CD /* NSString+TextSize.m in Sources */,
 				1812C8C918A7FD4E00B3D6CD /* NSDate+HumanDate.m in Sources */,
-				1812C8EF18A7FD4E00B3D6CD /* DownloadUpdateOperation.m in Sources */,
 				1812C90F18A7FD4E00B3D6CD /* DMImageOperation.m in Sources */,
 				1812C8F518A7FD4E00B3D6CD /* ServerManager.m in Sources */,
 				18C8B3B418A8001E00ECDD9C /* GalleryItem.m in Sources */,

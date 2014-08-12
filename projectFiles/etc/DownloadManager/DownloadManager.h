@@ -7,59 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DownloadUpdateOperation.h"
-#import "DownloadNodesOperation.h"
-#import "DownloadNodesUpdateOperation.h"
-#import "DownloadCheckOperation.h"
 
-#define DownloadManagerStartDownloadNotification @"DownloadManagerStartDownloadNotification"
-#define DownloadManagerProgressDownloadNotification @"DownloadManagerProgressDownloadNotification"
-#define DownloadManagerFinishDownloadNotification @"DownloadManagerFinishDownloadNotification"
-#define DownloadManagerBannerDownloadNotification @"DownloadManagerBannerDownloadNotification"
+#import "DownloadManagerOperation.h"
 
-#define DownloadManagerCheckFinishNotification @"DownloadManagerCheckFinishNotification"
+// Actions & Downloads
 
-#define DownloadManagerUpdateFinishNotification @"DownloadManagerUpdateFinishNotification"
+#pragma mark - DownloadManagerDelegate @protocol
 
-#define DownloadManagerNodesFinishNotification @"DownloadManagerNodesFinishNotification"
+@protocol DownloadManagerDelegate <NSObject>
 
-#define DownloadManagerProgramFinishNotification @"DownloadManagerProgramFinishNotification"
+@optional
 
-#define DownloadManagerFileFinishNotification @"DownloadManagerFileFinishNotification"
-#define DownloadManagerFileProgressNotification @"DownloadManagerFileProgressNotification"
+@end
 
-#define DownloadManagerChatThreadsUpdateNotification @"DownloadManagerChatThreadsUpdateNotification"
-#define DownloadManagerChatMessagesUpdateNotification @"DownloadManagerChatMessagesUpdateNotification"
-
-#define DownloadManagerProgramReviewNotification @"DownloadManagerProgramReviewNotification"
-//#define DownloadManagerChatMessagesUpdateNotification @"DownloadManagerChatMessagesUpdateNotification"
-
-#define DownloadManagerHeadlineFinishNotification @"DownloadManagerHeadlineFinishNotification"
-
-#define DownloadManagerUserInfoKeyError @"error"
-#define DownloadManagerUserInfoKeyProgress @"progress"
-#define DownloadManagerUserInfoKeyArticleID @"articleID"
-#define DownloadManagerUserInfoKeyArticleIds @"articleIds"
-#define DownloadManagerUserInfoKeyItemsIds @"itemsIds"
-#define DownloadManagerUserInfoKeyActualState @"actualState"
-#define DownloadManagerUserInfoKeyBannerUpdated @"bannerUpdated"
-#define DownloadManagerUserInfoKeyFileID @"fileID"
-#define DownloadManagerUserInfoKeyIsUpdated @"isUpdated"
-#define DownloadManagerUserInfoKeyChatThreadID @"threadID"
+#pragma mark - DownloadManager @interface
 
 @interface DownloadManager : NSObject
 
 + (DownloadManager *) defaultManager;
 
+#pragma mark - Observer methods
+- (void) addObserver: (id <DownloadManagerDelegate>) observer;
+- (void) removeObserver: (id <DownloadManagerDelegate>) observer;
+
+#pragma mark - Add/remove operation methods
+- (void) queueAddOperation: (DownloadManagerOperation *) operation;
+- (void) queueCancelOperation: (DownloadManagerOperation *) operation;
+
+#pragma mark - Cancel custom operation
 - (void) cancelDownloadByIdentifer: (NSString *) identifer;
+
+#pragma mark - Check exist custom operation
 - (BOOL) operationWithIdentifierExist: (NSString *) identifer;
-
-- (void) downloadUpdates;
-- (BOOL) updateInProgress;
-- (NSDate *) dateLastUpdate;
-
-- (void) downloadNodes: (NSArray *) ids withIdentifer: (NSString *) identifer;
-
-- (void) checkForUpdate;
 
 @end

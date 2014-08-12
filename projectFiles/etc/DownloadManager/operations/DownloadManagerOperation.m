@@ -28,7 +28,7 @@
         
         self.successDownload = NO;
         self.whileDownloading = NO;
-        self.error = 0;
+        self.emError = nil;
     }
     return self;
 }

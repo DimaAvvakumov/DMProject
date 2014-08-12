@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "AFNetworkActivityIndicatorManager.h"
+
 #import "PadViewController.h"
 #import "PhoneViewController.h"
 
@@ -36,10 +38,7 @@
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     // newtwork activity indicator
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled: YES];
-    
-    // init reachabiliti manager
-    [ReachabilityManager defaultManager];
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -143,40 +142,33 @@
     NSString *webDeviceToken = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     webDeviceToken = [webDeviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSUserDefaults *store = [NSUserDefaults standardUserDefaults];
-    [store setObject:webDeviceToken forKey:NSUserDefaults_KeyToken];
-    [store synchronize];
+    NSLog(@"Device successfull register with token: %@", webDeviceToken);
     
-    NSURL *url = [NSURL URLWithString:ServerParams_ApiEastMedia];
+    // send token to server
     
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
-    
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if( [UIDevice instancesRespondToSelector:@selector(identifierForVendor)] ) {
-        [params setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forKey:@"device"];
-    }
-    
+    // performing params
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:10];
+    // [params setObject:[AuthManager defaultManager].token forKey:@"sid"];
+    [params setObject:[NSNumber numberWithInteger:1] forKey:@"type_id"];
+    [params setObject:webDeviceToken forKey:@"token"];
 #ifdef DEBUG
     [params setValue:@"develop" forKey:@"mode"];
 #else
     [params setValue:@"production" forKey:@"mode"];
 #endif
-    [params setValue:[[NSBundle mainBundle] bundleIdentifier] forKey:@"bundle"];
-    [params setValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forKey:@"version"];
-    [params setValue:[[UIDevice currentDevice] family] forKey:@"family"];
-    [params setValue:webDeviceToken forKey:@"token"];
     
-    NSURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"apns/register" parameters:params];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        // [[Countly sharedInstance] recordEvent:@"Notification: Registered" count:1];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        // [[Countly sharedInstance] recordEvent:@"Notification: Server Error" count:1];
+    // performing request
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *apiActionUrl = [NSString stringWithFormat:@"%@%@",EMConfigManager.apnsAbsolutePath, @"auth/set.mobile.token"];
+    AFURLConnectionOperation *operation = [manager GET:apiActionUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"Token successfully registred");
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Register token error: %@", error);
+        
     }];
-    [operation start];
-    
-    // send token
-    // [[AuthManager defaultManager] addToken:webDeviceToken];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {

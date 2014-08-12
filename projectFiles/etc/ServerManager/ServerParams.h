@@ -9,12 +9,6 @@
 #ifndef formulaEastWind_ServerParams_h
 #define formulaEastWind_ServerParams_h
 
-#define ServerParams_ApiEastMedia @"https://api.east-media.ru"
-
-#define ServerParams_Host @"api.my-domain.ru"
-#define ServerParams_URLString @"http://api.my-domain.ru/"
-#define ServerParams_BaseURL [NSURL URLWithString: @"http://api.my-domain.ru/"]
-
 // errors block
 
 #define ServerParams_ErrorAuthorizationFailed 1

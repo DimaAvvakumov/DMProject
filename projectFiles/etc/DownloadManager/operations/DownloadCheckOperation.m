@@ -53,31 +53,26 @@
     if (lastItem) {
         [params setObject:[NSNumber numberWithInteger:lastItem.nodeID] forKey:@"lastID"];
     }
-
-    // performing request
-    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL: ServerParams_BaseURL];
-    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"ru/export/check.html" parameters:params];
-    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
-    [request setTimeoutInterval: 30.0];
     
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    // performing request
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *apiActionUrl = [NSString stringWithFormat:@"%@%@",EMConfigManager.serverAbsolutePath, @"messenger/message.list"];
+    AFURLConnectionOperation *operation = [manager GET:apiActionUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSInteger resultCode = [[ServerManager defaultManager] parseResultCode:JSON];
-        if (resultCode != 0) {
-            
-            self.error = resultCode;
-            self.whileDownloading = NO;
-            self.successDownload = NO;
-            
-            return;
-        }
-        
-        self.JSON = JSON;
+        NSDictionary *result = [responseObject objectForKey:@"result"];
         self.whileDownloading = NO;
-        self.successDownload = YES;
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         
-        self.error = ServerParams_ErrorServerIsUnavailable;
+        self.emError = [EMError errorWithServerResponse:responseObject];
+        self.successDownload = (self.emError)?NO:YES;
+        
+        if (self.successDownload) {
+            self.JSON = result;
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.emError = [[EMError alloc] initWithErrorType:TypeErrorInApp
+                                                errorCode:EMErrorInAppNoInternet
+                                               andMessage:@""];
         
         self.whileDownloading = NO;
         self.successDownload = NO;
@@ -99,7 +94,7 @@
         [NSThread sleepForTimeInterval: 0.1];
     }
     
-    if (self.error) {
+    if (self.emError) {
         // [self executeBlock];
         return NO;
     }
